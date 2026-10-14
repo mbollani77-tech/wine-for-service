@@ -77,8 +77,8 @@ export default function RegistrationForm() {
           {copied ? "Copiato" : "Copia IBAN e causale"}
         </button>
         <p className="mt-6 text-xs text-ink/55">
-          Se abbiamo il servizio email attivo riceverai una conferma con gli stessi dati.
-          Codice iscrizione: {done.code}
+          Riceverai una email di conferma con gli stessi dati (controlla anche nella posta
+          indesiderata). Codice iscrizione: {done.code}
         </p>
       </div>
     );
