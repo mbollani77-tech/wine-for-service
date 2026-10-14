@@ -5,20 +5,32 @@ export default function Home() {
   return (
     <main>
       <section className="relative overflow-hidden bg-wine-deep text-ivory">
+        {/* Villa Mazzotti: disegno a linee dorate ricavato dalla foto */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/villa-linee.webp"
+          alt=""
+          aria-hidden
+          className="absolute inset-x-0 top-0 h-auto w-full opacity-60 md:h-full md:object-cover md:object-top"
+          style={{
+            maskImage: "linear-gradient(to bottom, #000 0%, #000 50%, transparent 92%)",
+            WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 50%, transparent 92%)",
+          }}
+        />
         <div
           aria-hidden
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 20% 10%, rgba(176,141,87,.18), transparent 55%), radial-gradient(ellipse at 85% 90%, rgba(107,29,46,.9), transparent 60%)",
+              "radial-gradient(ellipse 60% 55% at 50% 48%, rgba(43,10,19,.82) 0%, rgba(43,10,19,.5) 55%, transparent 100%), linear-gradient(180deg, rgba(43,10,19,0) 60%, rgba(43,10,19,.95) 100%)",
           }}
         />
         <div className="relative mx-auto flex min-h-[92vh] max-w-4xl flex-col items-center justify-center px-6 py-24 text-center">
-          <p className="rise text-xs uppercase tracking-[0.4em] text-gold-soft">
+          <p className="rise text-base font-medium uppercase tracking-[0.4em] text-gold-soft sm:text-2xl">
             Rotary Club Chiari
           </p>
           <div className="rise rise-2 mt-8">
-            <div className="ornament justify-center font-serif text-2xl italic">
+            <div className="ornament justify-center font-serif text-3xl italic sm:text-5xl">
               {EVENT.edition} edizione · {EVENT.year}
             </div>
             <h1 className="mt-6 font-serif text-6xl font-medium leading-[0.95] tracking-tight sm:text-8xl">
