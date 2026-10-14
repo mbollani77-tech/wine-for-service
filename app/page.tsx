@@ -5,27 +5,22 @@ export default function Home() {
   return (
     <main>
       <section className="relative overflow-hidden bg-wine-deep text-ivory">
-        {/* Villa Mazzotti: disegno a linee dorate ricavato dalla foto */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/villa-linee.webp"
-          alt=""
-          aria-hidden
-          className="absolute inset-x-0 top-0 h-auto w-full opacity-60 md:h-full md:object-cover md:object-top"
-          style={{
-            maskImage: "linear-gradient(to bottom, #000 0%, #000 50%, transparent 92%)",
-            WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 50%, transparent 92%)",
-          }}
-        />
         <div
           aria-hidden
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 60% 55% at 50% 48%, rgba(43,10,19,.82) 0%, rgba(43,10,19,.5) 55%, transparent 100%), linear-gradient(180deg, rgba(43,10,19,0) 60%, rgba(43,10,19,.95) 100%)",
+              "radial-gradient(ellipse at 20% 10%, rgba(176,141,87,.18), transparent 55%), radial-gradient(ellipse at 85% 95%, rgba(107,29,46,.8), transparent 60%)",
           }}
         />
         <div className="relative mx-auto flex min-h-[92vh] max-w-4xl flex-col items-center justify-center px-6 py-24 text-center">
+          {/* Logo: Villa Mazzotti */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/villa-logo.webp"
+            alt="Villa Mazzotti"
+            className="rise mb-6 w-60 sm:w-80"
+          />
           <p className="rise text-base font-medium uppercase tracking-[0.4em] text-gold-soft sm:text-2xl">
             Rotary Club Chiari
           </p>
@@ -64,14 +59,22 @@ export default function Home() {
 
       <section className="mx-auto max-w-3xl px-6 py-24 text-center">
         <div className="ornament justify-center font-serif text-lg italic">Il service</div>
-        <p className="mt-8 font-serif text-2xl leading-relaxed text-ink/90 sm:text-3xl">
-          Il Rotary Club Chiari organizza un service per l’acquisto di un mezzo destinato
-          all’Ospedale di Chiari – ASST Franciacorta per il servizio di{" "}
-          <em className="text-wine-soft">cure palliative a domicilio</em>.
+        <p className="mt-8 font-serif text-3xl leading-snug text-wine sm:text-4xl">
+          <strong className="font-semibold">sabato 14 novembre</strong> | ore 19.30
+          <br />
+          <strong className="font-semibold">Villa Mazzotti</strong> | Chiari
         </p>
-        <p className="mt-6 text-ink/70">
-          La cena sarà seguita da un’asta di vini selezionati e da una esposizione di vini
-          pregiati. Nuova location: {EVENT.venue}, {EVENT.city}.
+        <p className="mt-8 font-serif text-xl leading-relaxed text-ink/90 sm:text-2xl">
+          Il Rotary Club Chiari organizza un <strong className="font-semibold text-wine">service</strong>{" "}
+          per l’acquisto di un mezzo destinato all’
+          <strong className="font-semibold text-wine">Ospedale di Chiari - ASST Franciacorta</strong>{" "}
+          per il servizio di{" "}
+          <strong className="font-semibold text-wine">Cure palliative a domicilio</strong>.
+        </p>
+        <p className="mt-6 font-serif text-xl leading-relaxed text-ink/90 sm:text-2xl">
+          La <strong className="font-semibold text-wine">cena esclusiva</strong> sarà seguita da
+          un’<strong className="font-semibold text-wine">asta di vini</strong> selezionati e da
+          una <strong className="font-semibold text-wine">esposizione di vini</strong> pregiati.
         </p>
       </section>
 
