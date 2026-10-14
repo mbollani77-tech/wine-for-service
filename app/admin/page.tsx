@@ -50,6 +50,16 @@ export default function AdminPage() {
     });
   }
 
+  async function saveNote(r: Registration, value: string) {
+    if (value === r.note_admin) return;
+    setRows((rs) => rs!.map((x) => (x.id === r.id ? { ...x, note_admin: value } : x)));
+    await fetch(`/api/admin/registrations/${r.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ note_admin: value }),
+    });
+  }
+
   async function remove(r: Registration) {
     if (!confirm(`Eliminare l'iscrizione di ${r.cognome} ${r.nome}?`)) return;
     await fetch(`/api/admin/registrations/${r.id}`, { method: "DELETE" });
@@ -137,13 +147,14 @@ export default function AdminPage() {
       />
 
       <div className="mt-6 overflow-x-auto">
-        <table className="w-full min-w-[760px] text-left text-sm">
+        <table className="w-full min-w-[900px] text-left text-sm">
           <thead className="text-[0.65rem] uppercase tracking-[0.2em] text-wine-soft">
             <tr>
               <th className="py-3 pr-3">Iscritto</th>
               <th className="pr-3">Contatti</th>
               <th className="pr-3 text-center">Pers.</th>
               <th className="pr-3">Ospiti / note</th>
+              <th className="pr-3">Note organizzatori</th>
               <th className="pr-3 text-right">€</th>
               <th className="pr-3 text-center">Bonifico</th>
               <th />
@@ -167,6 +178,16 @@ export default function AdminPage() {
                   {r.altri.join(", ")}
                   {r.note && <div className="mt-1 italic">“{r.note}”</div>}
                 </td>
+                <td className="pr-3">
+                  <textarea
+                    key={r.note_admin}
+                    defaultValue={r.note_admin}
+                    onBlur={(e) => saveNote(r, e.target.value)}
+                    rows={2}
+                    placeholder="Aggiungi nota…"
+                    className="w-full min-w-[170px] resize-y border border-gold/40 bg-paper p-2 text-xs outline-none focus:border-wine-soft"
+                  />
+                </td>
                 <td className="pr-3 text-right">{r.importo}</td>
                 <td className="pr-3 text-center">
                   <button
@@ -185,7 +206,7 @@ export default function AdminPage() {
             ))}
             {filtered.length === 0 && (
               <tr>
-                <td colSpan={7} className="py-10 text-center text-ink/50">Nessuna iscrizione.</td>
+                <td colSpan={8} className="py-10 text-center text-ink/50">Nessuna iscrizione.</td>
               </tr>
             )}
           </tbody>

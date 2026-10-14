@@ -19,6 +19,7 @@ export async function GET() {
     { header: "N. partecipanti", key: "n", width: 14 },
     { header: "Altri partecipanti", key: "altri", width: 40 },
     { header: "Note / intolleranze", key: "note", width: 40 },
+    { header: "Note organizzatori", key: "noteAdmin", width: 40 },
     { header: "Importo €", key: "importo", width: 12 },
     { header: "Bonifico ricevuto", key: "pagato", width: 16 },
   ];
@@ -34,6 +35,7 @@ export async function GET() {
       n: r.partecipanti,
       altri: r.altri.join(", "),
       note: r.note,
+      noteAdmin: r.note_admin,
       importo: r.importo,
       pagato: r.pagato ? "Sì" : "No",
     });
