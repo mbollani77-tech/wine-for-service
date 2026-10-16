@@ -50,6 +50,7 @@ export async function POST(req: Request) {
   if (!row) return Response.json({ error: "Errore, riprova" }, { status: 500 });
   const r = mapRow(row);
 
-  await sendConfirmation(r);
+  // Email di conferma disattivata di default: si abilita con SEND_CONFIRMATION_EMAIL=true
+  if (process.env.SEND_CONFIRMATION_EMAIL === "true") await sendConfirmation(r);
   return Response.json({ ok: true, code: r.code, importo });
 }
