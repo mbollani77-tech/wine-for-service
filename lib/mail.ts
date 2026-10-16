@@ -17,7 +17,7 @@ function html(r: Conferma) {
   return `<div style="font-family:Georgia,serif;max-width:560px;margin:auto;color:#2a1a1f">
   <h2 style="color:#6b1d2e;font-weight:normal">Grazie, ${esc(r.nome)}.</h2>
   <p>Abbiamo ricevuto la tua iscrizione a <b>${EVENT.name}</b> – ${EVENT.edition} edizione,
-  ${EVENT.dateLabel.toLowerCase()} ${EVENT.year} alle ${EVENT.time}, ${EVENT.venue}, ${EVENT.city}.</p>
+  ${EVENT.dateLabel.toLowerCase()} ${EVENT.year} alle ${EVENT.time}, ${EVENT.venue}, ${EVENT.address}, ${EVENT.city}.</p>
   <p>Partecipanti: <b>${r.partecipanti}</b><br>Contributo: <b>€ ${r.importo}</b></p>
   <p>Per perfezionare l'iscrizione effettua un bonifico a:</p>
   <p style="background:#f6efe6;padding:14px;border-left:3px solid #b08d57">

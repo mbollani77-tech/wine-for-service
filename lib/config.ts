@@ -1,10 +1,11 @@
 export const EVENT = {
   name: "Wine for Service",
-  edition: "IV",
+  edition: "III",
   year: 2026,
   dateLabel: "Sabato 14 novembre",
   time: "19:30",
   venue: "Villa Mazzotti",
+  address: "Viale G. Mazzini 39",
   city: "Chiari",
   pricePerPerson: 80,
   maxPerRegistration: 10,

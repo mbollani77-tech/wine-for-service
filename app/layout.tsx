@@ -13,7 +13,7 @@ const sans = Inter({ variable: "--font-inter", subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Wine for Service 2026 – Rotary Club Chiari",
   description:
-    "IV edizione · Sabato 14 novembre 2026 · Villa Mazzotti, Chiari. Cena di beneficenza con asta di vini per le cure palliative a domicilio dell'Ospedale di Chiari.",
+    "III edizione · Sabato 14 novembre 2026 · Villa Mazzotti, Viale G. Mazzini 39, Chiari. Cena di beneficenza con asta di vini per le cure palliative a domicilio dell'Ospedale di Chiari.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

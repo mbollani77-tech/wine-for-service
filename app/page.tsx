@@ -39,12 +39,13 @@ export default function Home() {
           <div className="rise rise-3 mt-12 grid gap-px overflow-hidden rounded-sm border border-gold/40 bg-gold/30 text-sm sm:grid-cols-3">
             {[
               ["Quando", `${EVENT.dateLabel} · ore ${EVENT.time}`],
-              ["Dove", `${EVENT.venue} · ${EVENT.city}`],
+              ["Dove", `${EVENT.venue} · ${EVENT.city}`, EVENT.address],
               ["Contributo", `€ ${EVENT.pricePerPerson} a persona`],
-            ].map(([k, v]) => (
+            ].map(([k, v, sub]) => (
               <div key={k} className="bg-wine-deep/90 px-8 py-5">
                 <div className="text-[0.65rem] uppercase tracking-[0.3em] text-gold-soft">{k}</div>
                 <div className="mt-1 font-serif text-xl">{v}</div>
+                {sub && <div className="mt-1 text-xs tracking-wide text-ivory/60">{sub}</div>}
               </div>
             ))}
           </div>
@@ -64,6 +65,7 @@ export default function Home() {
           <br />
           <strong className="font-semibold">Villa Mazzotti</strong> | Chiari
         </p>
+        <p className="mt-2 text-sm uppercase tracking-[0.25em] text-wine-soft">{EVENT.address}</p>
         <p className="mt-8 font-serif text-xl leading-relaxed text-ink/90 sm:text-2xl">
           Il Rotary Club Chiari organizza un <strong className="font-semibold text-wine">service</strong>{" "}
           per l’acquisto di un mezzo destinato all’
